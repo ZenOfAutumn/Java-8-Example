@@ -1,4 +1,5 @@
 package com.autumn.zen.lambda.expression;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +31,5 @@ public class InterfaceStaticMethod {
 			Assert.assertTrue(nCopy == copy);
 		}
 	}
-	
-	
 
 }

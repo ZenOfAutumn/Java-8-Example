@@ -45,10 +45,9 @@ public class OptionalReturn {
 	public static Optional<Double> squareRoot(Double x) {
 		return x < 0 ? Optional.empty() : Optional.of(Math.sqrt(x));
 	}
-	
-	// 4.flatMap
-	public static Optional<Double> zx = Optional.of(4.0).flatMap(OptionalReturn::inverse).flatMap(OptionalReturn::squareRoot);
-	
 
+	// 4.flatMap
+	public static Optional<Double> zx = Optional.of(4.0).flatMap(OptionalReturn::inverse)
+			.flatMap(OptionalReturn::squareRoot);
 
 }

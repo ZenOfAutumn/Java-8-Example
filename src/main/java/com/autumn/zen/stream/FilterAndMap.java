@@ -23,13 +23,12 @@ public class FilterAndMap {
 			}
 		}).collect(Collectors.toList());
 	}
-	
-	public List<String> filterShortWithImpl(List<String> words,int max){
-		return words.stream().filter(w->w.length()<=max).collect(Collectors.toList());
+
+	public List<String> filterShortWithImpl(List<String> words, int max) {
+		return words.stream().filter(w -> w.length() <= max).collect(Collectors.toList());
 	}
-	
-	
-	public static List<String> createTestData(){
+
+	public static List<String> createTestData() {
 		List<String> test = new ArrayList<String>();
 		test.add("a");
 		test.add("ab");
@@ -38,94 +37,43 @@ public class FilterAndMap {
 		test.add("abcde");
 		return test;
 	}
-	
+
 	@Test
-	public void testFilterShort(){
+	public void testFilterShort() {
 		Assert.assertTrue(filterShort(createTestData(), 3).size() == 3);
 		Assert.assertTrue(filterShortWithImpl(createTestData(), 3).size() == 3);
 	}
-	
+
 	// 2.map
-	
-	public List<String> toLowerCase(List<String> words){
+
+	public List<String> toLowerCase(List<String> words) {
 		return words.stream().map(String::toLowerCase).collect(Collectors.toList());
 	}
-	
-	
+
 	@Test
-	public void testToLowerCase(){
+	public void testToLowerCase() {
 		List<String> test = new ArrayList<String>();
 		test.add("ABCD");
 		Assert.assertEquals("abcd", toLowerCase(test).get(0));
 	}
-	
+
 	// 3.flatMap
-	
-	public static Stream<Character> characterStream(String word){
+
+	public static Stream<Character> characterStream(String word) {
 		List<Character> chars = new ArrayList<Character>();
-		for(Character c:word.toCharArray()){
+		for (Character c : word.toCharArray()) {
 			chars.add(c);
 		}
 		return chars.stream();
 	}
-	
-	
-	public List<Character> combineCharacters(List<String> words){
-		return words.stream().flatMap(w->characterStream(w)).collect(Collectors.toList());
+
+	public List<Character> combineCharacters(List<String> words) {
+		return words.stream().flatMap(w -> characterStream(w)).collect(Collectors.toList());
 	}
 
-	
 	@Test
-	public void  testCombineCharacters(){
-			Assert.assertEquals(15,combineCharacters(createTestData()).size());
+	public void testCombineCharacters() {
+		Assert.assertEquals(15, combineCharacters(createTestData()).size());
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

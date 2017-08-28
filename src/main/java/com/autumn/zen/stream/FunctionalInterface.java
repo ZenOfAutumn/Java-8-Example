@@ -81,24 +81,22 @@ public class FunctionalInterface {
 			return t.length() + u.length();
 		}
 	}
-	
-	
+
 	// 9.UnaryOperator
-	static class UnaryOperatorImpl implements UnaryOperator<String>{
+	static class UnaryOperatorImpl implements UnaryOperator<String> {
 		@Override
 		public String apply(String t) {
-			return t+":"+t.length();
-		}
-	}
-	
-    // 10.BinaryOperator
-	
-	static class BinaryOperatorImpl implements BinaryOperator<String>{
-		@Override
-		public String apply(String t, String u) {
-			return t+u;
+			return t + ":" + t.length();
 		}
 	}
 
-	
+	// 10.BinaryOperator
+
+	static class BinaryOperatorImpl implements BinaryOperator<String> {
+		@Override
+		public String apply(String t, String u) {
+			return t + u;
+		}
+	}
+
 }

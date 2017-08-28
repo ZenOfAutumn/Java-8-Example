@@ -18,7 +18,4 @@ public class ExtractStream {
 	private static Stream<Double> doubles = Stream.iterate(1.0, p -> p * 2)
 			.peek(e -> System.out.println("fetching: " + e)).limit(20);
 
-	
-
-	
 }

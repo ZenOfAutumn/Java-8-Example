@@ -16,30 +16,29 @@ public class LaztOperation {
 		public StringHolder(String str) {
 			this.str = str;
 		}
-		
+
 		StringHolder apply(UnaryOperator<String> op) {
 			ops.add(op);
 			return this;
 		}
-		
-		String process(){
-			for(UnaryOperator<String> op:ops){
+
+		String process() {
+			for (UnaryOperator<String> op : ops) {
 				str = op.apply(str);
 			}
 			return str;
-			
+
 		}
 	}
-	
+
 	@Test
-	public void testDelayPro(){
+	public void testDelayPro() {
 		StringHolder ori = new StringHolder("");
-		for(int i=0;i<3;i++){
+		for (int i = 0; i < 3; i++) {
 			final int j = i;
-			ori.apply((s)->s+j);
+			ori.apply((s) -> s + j);
 		}
 		Assert.assertEquals("012", ori.process());
 	}
-	
 
 }

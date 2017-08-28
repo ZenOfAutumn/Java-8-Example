@@ -12,6 +12,4 @@ public class StatusTransfer {
 	private static Stream<String> longestFirst = Stream.of("a", "ab", "abc")
 			.sorted(Comparator.comparing(String::length).reversed());
 
-	
-
 }

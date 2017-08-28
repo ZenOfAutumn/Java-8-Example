@@ -22,12 +22,13 @@ public class HandleException {
 		};
 		t.start();
 	}
-	
-	
+
 	@Test
-	public void testDoInOrderAsync(){
-		doInOrderAsync(()->{throw new NullPointerException("null pointer");}, ()->{}, t->System.out.println(t.getMessage()));
+	public void testDoInOrderAsync() {
+		doInOrderAsync(() -> {
+			throw new NullPointerException("null pointer");
+		}, () -> {
+		}, t -> System.out.println(t.getMessage()));
 	}
-	
-	
+
 }

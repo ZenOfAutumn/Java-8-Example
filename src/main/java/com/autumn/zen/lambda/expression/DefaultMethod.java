@@ -1,4 +1,5 @@
 package com.autumn.zen.lambda.expression;
+
 import org.junit.Assert;
 import org.junit.Test;
 

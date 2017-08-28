@@ -34,27 +34,24 @@ public class VariableScopes {
 	}
 
 	// lambda表达式的方法体与嵌套代码块有着相同的作用域
-	
-	static class FinalToString{
-		
-		public void  doWork(){
-			new Thread(()->{
+
+	static class FinalToString {
+
+		public void doWork() {
+			new Thread(() -> {
 				System.out.println(this.toString());
 			}).start();
 		}
-		
+
 		@Override
 		public String toString() {
 			return "final to string";
 		}
 	}
-	
-	
-	
-	
+
 	public static void main(String[] args) {
 		FinalToString fts = new FinalToString();
-		fts.doWork();		
+		fts.doWork();
 	}
 
 }

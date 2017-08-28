@@ -19,7 +19,7 @@ public class FunctionalInterface {
 		};
 		return sleeper;
 	}
-	
+
 	static Callable<Void> exceptionThrowLambda() {
 
 		Callable<Void> sleeper = () -> {
@@ -28,10 +28,5 @@ public class FunctionalInterface {
 		};
 		return sleeper;
 	}
-	
-	
-	
-	
 
-	
 }
