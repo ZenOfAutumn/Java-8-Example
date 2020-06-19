@@ -46,7 +46,7 @@ public class CompletableFutureCase {
 		
 		CompletableFuture<String> threadLeft = CompletableFuture.supplyAsync(()->{
 			try {
-				Thread.sleep(500);
+				Thread.sleep(400);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -55,7 +55,7 @@ public class CompletableFutureCase {
 		
 		CompletableFuture<String> threadRight = CompletableFuture.supplyAsync(()->{
 			try {
-				Thread.sleep(500);
+				Thread.sleep(300);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -66,6 +66,13 @@ public class CompletableFutureCase {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		try {
+			System.out.println(threadLeft.get());
+			System.out.println(threadRight.get());
+		}catch (Exception e){
+
+		}
+
 		threadRight.thenAcceptBoth(threadLeft, (t,u)->System.out.println(t+"|"+u));
 	}	
 	
