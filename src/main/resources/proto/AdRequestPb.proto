@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package com.autumn.zen.protobuf;
+
+option java_outer_classname = "AdRequestPb";
+
+
+message AdRequest{
+
+  Header header = 1;
+  oneof payload {
+    ArticleResponse articleResponse = 2;
+    MusicResponse musicResponse = 3;
+  }
+
+}
+
+
+message Header {
+  string namespace = 1;
+  string name = 2;
+  string version = 3;
+}
+
+message ArticleResponse {
+  string title = 1;
+  string author = 2;
+  string date = 3;
+}
+
+message MusicResponse {
+  string title = 1;
+  string author = 2;
+  bytes data = 3;
+}
